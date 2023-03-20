@@ -78,8 +78,7 @@ namespace encryption
             {
                 ProgressTimer.Stop();
                 StripProgressBar.Value = 0;
-            }
-            
+            }   
         }
 
         private void ввестиКлючToolStripMenuItem_Click(object sender, EventArgs e)

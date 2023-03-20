@@ -10,5 +10,7 @@ namespace encryption
     {
         public static string СolumnText;
         public static string StringText;
+        public static string SpiritText;
+
     }
 }

@@ -57,8 +57,8 @@
             // 
             this.TextFormKey.AutoSize = true;
             this.TextFormKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextFormKey.ForeColor = System.Drawing.SystemColors.Info;
-            this.TextFormKey.Location = new System.Drawing.Point(36, 9);
+            this.TextFormKey.ForeColor = System.Drawing.Color.White;
+            this.TextFormKey.Location = new System.Drawing.Point(45, 9);
             this.TextFormKey.Name = "TextFormKey";
             this.TextFormKey.Size = new System.Drawing.Size(148, 24);
             this.TextFormKey.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.infoFormKey.AutoSize = true;
             this.infoFormKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.infoFormKey.ForeColor = System.Drawing.Color.White;
-            this.infoFormKey.Location = new System.Drawing.Point(67, 168);
+            this.infoFormKey.Location = new System.Drawing.Point(63, 168);
             this.infoFormKey.Name = "infoFormKey";
             this.infoFormKey.Size = new System.Drawing.Size(117, 20);
             this.infoFormKey.TabIndex = 4;
