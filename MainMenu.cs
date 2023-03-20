@@ -21,7 +21,7 @@ namespace encryption
             ProgressTimer.Start();
             ProgressTimer.Interval = 600;
         }
-
+        bool savedone = false;
         private void ToolMenu_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -42,6 +42,7 @@ namespace encryption
                 string filename = saveFileDialog.FileName;
                 // сохраняем текст в файл↓
                 System.IO.File.WriteAllText(filename, OutResult.Text);
+                savedone = true;
                 MessageBox.Show("Файл сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -65,6 +66,7 @@ namespace encryption
                 string filename = openFileDialog.FileName;
                 string fileText = System.IO.File.ReadAllText(filename);
                 //Запись в текстбокс↓
+                savedone = false;
                 OutResult.Text = fileText;
             }
                 StripProgressBar.Maximum = 100;
@@ -114,6 +116,8 @@ namespace encryption
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Попытка в закрытие без предупреждения после сохранения.
+            //if (savedone = false) { }
             DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
@@ -128,7 +132,7 @@ namespace encryption
         private void Encryption_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                e.Cancel = (result !=DialogResult.Yes);
+                e.Cancel = (result != DialogResult.Yes);
         }
     }
 }
