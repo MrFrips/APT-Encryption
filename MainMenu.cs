@@ -35,8 +35,7 @@ namespace encryption
                 if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
                     return;
                 //Загрузка Бара
-                //туть
-
+                //туть ↓
                 //
 
                 // получаем выбранный файл↓
@@ -91,9 +90,25 @@ namespace encryption
             ColumnKeyMenu.Text += DataReform.СolumnText;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GoEncryption_Click(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrEmpty(DataReform.StringText))
+            {
+                DialogResult result = MessageBox.Show("","", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //открыть форму, если нет то не открывать.
+                }
+
+            }else if (string.IsNullOrEmpty(DataReform.СolumnText))
+            {
+                MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+            }
         }
 
 
