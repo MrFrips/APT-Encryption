@@ -128,15 +128,7 @@ namespace encryption
         private void Encryption_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else 
-            {
-                e.Cancel = true;
-                //Простое закрытие←
-            }
+                e.Cancel = (result !=DialogResult.Yes);
         }
     }
 }
