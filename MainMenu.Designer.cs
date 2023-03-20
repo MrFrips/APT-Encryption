@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Encryption));
             this.GoEncryption = new System.Windows.Forms.Button();
             this.OutResult = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.ToolMenuAll = new System.Windows.Forms.ToolStrip();
             this.MenuButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьФайлСТекстомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ввестиКлючToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.StripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
@@ -73,13 +73,6 @@
             this.OutResult.Size = new System.Drawing.Size(776, 83);
             this.OutResult.TabIndex = 1;
             // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(1373, 798);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 3;
-            // 
             // ToolMenuAll
             // 
             this.ToolMenuAll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -99,7 +92,8 @@
             this.MenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolMenu,
             this.открытьФайлСТекстомToolStripMenuItem,
-            this.ввестиКлючToolStripMenuItem});
+            this.ввестиКлючToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.MenuButton.Image = global::encryption.Properties.Resources.Button_C_;
             this.MenuButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MenuButton.Name = "MenuButton";
@@ -127,6 +121,13 @@
             this.ввестиКлючToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.ввестиКлючToolStripMenuItem.Text = "Ввести ключ";
             this.ввестиКлючToolStripMenuItem.Click += new System.EventHandler(this.ввестиКлючToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -171,13 +172,13 @@
             this.Controls.Add(this.ColumnKeyMenu);
             this.Controls.Add(this.StringKeyMenu);
             this.Controls.Add(this.ToolMenuAll);
-            this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.OutResult);
             this.Controls.Add(this.GoEncryption);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Encryption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encryption";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Encryption_FormClosing);
             this.ToolMenuAll.ResumeLayout(false);
             this.ToolMenuAll.PerformLayout();
             this.ResumeLayout(false);
@@ -189,7 +190,6 @@
 
         private System.Windows.Forms.Button GoEncryption;
         private System.Windows.Forms.TextBox OutResult;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.ToolStrip ToolMenuAll;
         private System.Windows.Forms.ToolStripDropDownButton MenuButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -200,6 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem ввестиКлючToolStripMenuItem;
         private System.Windows.Forms.Label StringKeyMenu;
         private System.Windows.Forms.Label ColumnKeyMenu;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

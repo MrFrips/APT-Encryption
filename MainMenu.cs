@@ -92,37 +92,51 @@ namespace encryption
 
         private void GoEncryption_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(DataReform.StringText))
+            if (string.IsNullOrEmpty(DataReform.StringText) && (string.IsNullOrEmpty(DataReform.СolumnText)))
             {
-                DialogResult result = MessageBox.Show("","", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Прежде чем что то шифровать нужен ключ...\n\nХотите открыть окно с вводом ключа?", "Горе шифровщик...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    //открыть форму, если нет то не открывать.
+                    //Открыть форму, если нет то не открывать.
+                    Key f = new Key();
+                    f.ShowDialog();
                 }
-
-            }else if (string.IsNullOrEmpty(DataReform.СolumnText))
-            {
-                MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else
+                {
+                    //Простое закрытие←
+                }
             }
             else
             {
-
+                //Начать шифровку.↓
             }
         }
 
-
-        //private void нетToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("ТЫ ОБЯЗАН СОХРАНИТЬ!!!");
-        //    MessageBox.Show("BITCH!!!", "АБВГДЁЖ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    this.Close();
-        //}
-        //private void даToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Вы уверенны?", "Точно точно?", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    MessageBox.Show("Точно точно уверены в этом?", "Прям точно точно?", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    MessageBox.Show("ну как скажете", "НУ ладно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //}
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                //Простое закрытие←
+            }
+        }
+        //Подправить предотвращения закрытие формы по кнопке...
+        private void Encryption_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else 
+            {
+                e.Cancel = true;
+                //Простое закрытие←
+            }
+        }
     }
 }
