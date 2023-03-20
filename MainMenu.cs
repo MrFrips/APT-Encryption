@@ -90,7 +90,12 @@ namespace encryption
             StringKeyMenu.Text += DataReform.StringText;
             ColumnKeyMenu.Text += DataReform.СolumnText;
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //private void нетToolStripMenuItem_Click(object sender, EventArgs e)
         //{

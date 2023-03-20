@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.InOutPutDataError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CloseThisForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InOutPutDataError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,12 +102,28 @@
             this.InOutPutDataError.ContainerControl = this;
             this.InOutPutDataError.Icon = ((System.Drawing.Icon)(resources.GetObject("InOutPutDataError.Icon")));
             // 
+            // CloseThisForm
+            // 
+            this.CloseThisForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.CloseThisForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CloseThisForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseThisForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.CloseThisForm.ForeColor = System.Drawing.Color.White;
+            this.CloseThisForm.Location = new System.Drawing.Point(12, 191);
+            this.CloseThisForm.Name = "CloseThisForm";
+            this.CloseThisForm.Size = new System.Drawing.Size(212, 28);
+            this.CloseThisForm.TabIndex = 3;
+            this.CloseThisForm.Text = "Сохранить ключ?";
+            this.CloseThisForm.UseVisualStyleBackColor = false;
+            this.CloseThisForm.Click += new System.EventHandler(this.CloseThisForm_Click);
+            // 
             // Key
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(236, 231);
+            this.Controls.Add(this.CloseThisForm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TextFormKey);
@@ -131,5 +148,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider InOutPutDataError;
+        private System.Windows.Forms.Button CloseThisForm;
     }
 }

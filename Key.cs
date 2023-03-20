@@ -59,5 +59,21 @@ namespace encryption
             DataReform.StringText = StringBox.Text;
             DataReform.СolumnText = СolumnBox.Text;
         }
+
+        private void CloseThisForm_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(СolumnBox.Text))
+            {
+                MessageBox.Show("Заполни пробелы бро!","Брооооо.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (String.IsNullOrEmpty(StringBox.Text))
+            {
+                MessageBox.Show("бро как так, пробел заполни!", "Ёп Брооооо.....", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Close();
+            }
+            
+        }
     }
 }
