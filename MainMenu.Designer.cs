@@ -90,8 +90,8 @@
             // 
             this.MenuButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.MenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolMenu,
             this.открытьФайлСТекстомToolStripMenuItem,
+            this.ToolMenu,
             this.ввестиКлючToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.MenuButton.Image = global::encryption.Properties.Resources.Button_C_;
@@ -104,29 +104,29 @@
             // ToolMenu
             // 
             this.ToolMenu.Name = "ToolMenu";
-            this.ToolMenu.Size = new System.Drawing.Size(211, 22);
-            this.ToolMenu.Text = "Сохранить шифровку?";
+            this.ToolMenu.Size = new System.Drawing.Size(190, 22);
+            this.ToolMenu.Text = "Сохранить в файл?";
             this.ToolMenu.Click += new System.EventHandler(this.ToolMenu_Click);
             // 
             // открытьФайлСТекстомToolStripMenuItem
             // 
             this.открытьФайлСТекстомToolStripMenuItem.Name = "открытьФайлСТекстомToolStripMenuItem";
-            this.открытьФайлСТекстомToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.открытьФайлСТекстомToolStripMenuItem.Text = "Открыть?";
+            this.открытьФайлСТекстомToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.открытьФайлСТекстомToolStripMenuItem.Text = "Открыть файл?";
             this.открытьФайлСТекстомToolStripMenuItem.Click += new System.EventHandler(this.открытьФайлСТекстомToolStripMenuItem_Click);
             // 
             // ввестиКлючToolStripMenuItem
             // 
             this.ввестиКлючToolStripMenuItem.Name = "ввестиКлючToolStripMenuItem";
-            this.ввестиКлючToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.ввестиКлючToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.ввестиКлючToolStripMenuItem.Text = "Ввести ключ";
             this.ввестиКлючToolStripMenuItem.Click += new System.EventHandler(this.ввестиКлючToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.exitToolStripMenuItem.Text = "Закрыть";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolStripSeparator1

@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.InOutPutDataError = new System.Windows.Forms.ErrorProvider(this.components);
             this.CloseThisForm = new System.Windows.Forms.Button();
+            this.infoFormKey = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.InOutPutDataError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,12 +118,24 @@
             this.CloseThisForm.UseVisualStyleBackColor = false;
             this.CloseThisForm.Click += new System.EventHandler(this.CloseThisForm_Click);
             // 
+            // infoFormKey
+            // 
+            this.infoFormKey.AutoSize = true;
+            this.infoFormKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.infoFormKey.ForeColor = System.Drawing.Color.White;
+            this.infoFormKey.Location = new System.Drawing.Point(67, 168);
+            this.infoFormKey.Name = "infoFormKey";
+            this.infoFormKey.Size = new System.Drawing.Size(117, 20);
+            this.infoFormKey.TabIndex = 4;
+            this.infoFormKey.Text = "Какое-то info";
+            // 
             // Key
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(236, 231);
+            this.Controls.Add(this.infoFormKey);
             this.Controls.Add(this.CloseThisForm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider InOutPutDataError;
         private System.Windows.Forms.Button CloseThisForm;
+        private System.Windows.Forms.Label infoFormKey;
     }
 }
