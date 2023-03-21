@@ -55,7 +55,7 @@ namespace encryption
                 //Фильтра для файла↓
                 openFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
                 openFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
-                //openFileDialog.FilterIndex = 2;
+                openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
                 //Откртытие Диолога↓
                 if (openFileDialog.ShowDialog() == DialogResult.Cancel)
