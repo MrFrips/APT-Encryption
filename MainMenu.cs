@@ -55,7 +55,7 @@ namespace encryption
                 //Фильтра для файла↓
                 openFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
                 openFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
-                openFileDialog.FilterIndex = 2;
+                //openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
                 //Откртытие Диолога↓
                 if (openFileDialog.ShowDialog() == DialogResult.Cancel)
@@ -93,7 +93,7 @@ namespace encryption
 
         private void GoEncryption_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(DataReform.StringText) && (string.IsNullOrEmpty(DataReform.СolumnText)))
+            if (string.IsNullOrEmpty(DataReform.StringText) || (string.IsNullOrEmpty(DataReform.СolumnText)))
             {
                 DialogResult result = MessageBox.Show("Прежде чем что то шифровать нужен ключ...\n\nХотите открыть окно с вводом ключа?", "Горе шифровщик...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
@@ -101,11 +101,10 @@ namespace encryption
                     //Открыть форму, если нет то не открывать.
                     Key f = new Key();
                     f.ShowDialog();
+                    StringKeyMenu.Text += DataReform.StringText;
+                    ColumnKeyMenu.Text += DataReform.СolumnText;
                 }
-                else
-                {
-                    //Простое закрытие Сообщения←
-                }
+                //Простое закрытие Сообщения←
             }
             else
             {

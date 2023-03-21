@@ -17,11 +17,6 @@ namespace encryption
             InitializeComponent();
         }
 
-        private void Key_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void StringBox_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(StringBox.Text)) //== (OutResult.Text.Length < 4))
@@ -74,6 +69,24 @@ namespace encryption
                 this.Close();
             }
             
+        }
+
+        private void StringBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void СolumnBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
