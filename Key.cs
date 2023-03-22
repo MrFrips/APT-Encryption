@@ -56,6 +56,7 @@ namespace encryption
             //Properties.Settings.Default.StringText();
             //Properties.Settings.Default.СolumnText();
             //Properties.Settings.Default.Save();
+            //Привет Мишаня!
             
         }
 
