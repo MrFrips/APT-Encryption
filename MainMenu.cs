@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +21,14 @@ namespace encryption
             InitializeComponent();
             ProgressTimer.Start();
             ProgressTimer.Interval = 600;
+            //this.Text += " " + Properties.Settings.Default.Version; //Добавляем в название программы, версию.
+            Properties.Settings.Default.TrytoEncrypt++; //Добавляем +1 к кол-ву запусков программы.
+            TrytoEncryptLabel.Text += Properties.Settings.Default.TrytoEncrypt.ToString(); //выводим в Label2 кол-во запусков программы.
+            
+            //richTextBox1.Text = Properties.Settings.Default.Save_text; // Загружаем ранее сохраненный текст
+            Properties.Settings.Default.Save();  // Сохраняем переменные.
         }
-        bool savedone = false;
+        //bool savedone = false;
         private void ToolMenu_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -42,7 +49,7 @@ namespace encryption
                 string filename = saveFileDialog.FileName;
                 // сохраняем текст в файл↓
                 System.IO.File.WriteAllText(filename, OutResult.Text);
-                savedone = true;
+                //savedone = true;
                 MessageBox.Show("Файл сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -66,7 +73,7 @@ namespace encryption
                 string filename = openFileDialog.FileName;
                 string fileText = System.IO.File.ReadAllText(filename);
                 //Запись в текстбокс↓
-                savedone = false;
+                //savedone = false;
                 OutResult.Text = fileText;
             }
                 StripProgressBar.Maximum = 100;

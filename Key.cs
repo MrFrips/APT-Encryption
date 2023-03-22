@@ -15,6 +15,7 @@ namespace encryption
         public Key()
         {
             InitializeComponent();
+            Properties.Settings.Default.Save();  // Сохраняем переменные.
         }
 
         private void StringBox_TextChanged(object sender, EventArgs e)
@@ -53,11 +54,6 @@ namespace encryption
         {
             DataReform.StringText = StringBox.Text;
             DataReform.СolumnText = СolumnBox.Text;
-            //Properties.Settings.Default.StringText();
-            //Properties.Settings.Default.СolumnText();
-            //Properties.Settings.Default.Save();
-            //Привет Мишаня!
-            
         }
 
         private void CloseThisForm_Click(object sender, EventArgs e)
@@ -71,6 +67,9 @@ namespace encryption
             }
             else
             {
+                Properties.Settings.Default.SaveTextColumn = СolumnBox.Text; // Записываем содержимое СolumnBox в SaveTextColumn
+                Properties.Settings.Default.SaveTextSrting = StringBox.Text; // Записываем содержимое StringBox в SaveTextSrting
+                Properties.Settings.Default.Save(); // Сохраняем переменные.
                 this.Close();
             }
             

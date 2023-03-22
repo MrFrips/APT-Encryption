@@ -25,25 +25,37 @@ namespace encryption.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string СolumnText {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SaveTextColumn {
             get {
-                return ((string)(this["СolumnText"]));
+                return ((string)(this["SaveTextColumn"]));
             }
             set {
-                this["СolumnText"] = value;
+                this["SaveTextColumn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SaveTextSrting {
+            get {
+                return ((string)(this["SaveTextSrting"]));
+            }
+            set {
+                this["SaveTextSrting"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string StringText {
+        public int TrytoEncrypt {
             get {
-                return ((string)(this["StringText"]));
+                return ((int)(this["TrytoEncrypt"]));
             }
             set {
-                this["StringText"] = value;
+                this["TrytoEncrypt"] = value;
             }
         }
     }

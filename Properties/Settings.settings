@@ -2,10 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="encryption.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="СolumnText" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="SaveTextColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="StringText" Type="System.String" Scope="User">
+    <Setting Name="SaveTextSrting" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TrytoEncrypt" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>

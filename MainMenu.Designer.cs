@@ -34,8 +34,8 @@
             this.OutResult = new System.Windows.Forms.TextBox();
             this.ToolMenuAll = new System.Windows.Forms.ToolStrip();
             this.MenuButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьФайлСТекстомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ввестиКлючToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -43,6 +43,7 @@
             this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
             this.StringKeyMenu = new System.Windows.Forms.Label();
             this.ColumnKeyMenu = new System.Windows.Forms.Label();
+            this.TrytoEncryptLabel = new System.Windows.Forms.Label();
             this.ToolMenuAll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,19 +102,19 @@
             this.MenuButton.Text = "Menu";
             this.MenuButton.ToolTipText = "ButtonMenu";
             // 
-            // ToolMenu
-            // 
-            this.ToolMenu.Name = "ToolMenu";
-            this.ToolMenu.Size = new System.Drawing.Size(190, 22);
-            this.ToolMenu.Text = "Сохранить в файл?";
-            this.ToolMenu.Click += new System.EventHandler(this.ToolMenu_Click);
-            // 
             // открытьФайлСТекстомToolStripMenuItem
             // 
             this.открытьФайлСТекстомToolStripMenuItem.Name = "открытьФайлСТекстомToolStripMenuItem";
             this.открытьФайлСТекстомToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.открытьФайлСТекстомToolStripMenuItem.Text = "Открыть файл?";
             this.открытьФайлСТекстомToolStripMenuItem.Click += new System.EventHandler(this.открытьФайлСТекстомToolStripMenuItem_Click);
+            // 
+            // ToolMenu
+            // 
+            this.ToolMenu.Name = "ToolMenu";
+            this.ToolMenu.Size = new System.Drawing.Size(190, 22);
+            this.ToolMenu.Text = "Сохранить в файл?";
+            this.ToolMenu.Click += new System.EventHandler(this.ToolMenu_Click);
             // 
             // ввестиКлючToolStripMenuItem
             // 
@@ -163,12 +164,24 @@
             this.ColumnKeyMenu.TabIndex = 5;
             this.ColumnKeyMenu.Text = "Column: ";
             // 
+            // TrytoEncryptLabel
+            // 
+            this.TrytoEncryptLabel.AutoSize = true;
+            this.TrytoEncryptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.TrytoEncryptLabel.ForeColor = System.Drawing.Color.White;
+            this.TrytoEncryptLabel.Location = new System.Drawing.Point(610, 29);
+            this.TrytoEncryptLabel.Name = "TrytoEncryptLabel";
+            this.TrytoEncryptLabel.Size = new System.Drawing.Size(178, 18);
+            this.TrytoEncryptLabel.TabIndex = 5;
+            this.TrytoEncryptLabel.Text = "Попытки зашифровать: ";
+            // 
             // Encryption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TrytoEncryptLabel);
             this.Controls.Add(this.ColumnKeyMenu);
             this.Controls.Add(this.StringKeyMenu);
             this.Controls.Add(this.ToolMenuAll);
@@ -201,6 +214,7 @@
         private System.Windows.Forms.Label StringKeyMenu;
         private System.Windows.Forms.Label ColumnKeyMenu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label TrytoEncryptLabel;
     }
 }
 
