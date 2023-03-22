@@ -53,6 +53,10 @@ namespace encryption
         {
             DataReform.StringText = StringBox.Text;
             DataReform.СolumnText = СolumnBox.Text;
+            //Properties.Settings.Default.StringText();
+            //Properties.Settings.Default.СolumnText();
+            //Properties.Settings.Default.Save();
+            
         }
 
         private void CloseThisForm_Click(object sender, EventArgs e)
