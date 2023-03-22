@@ -116,6 +116,53 @@ namespace encryption
             else
             {
                 //Начать шифровку.↓
+                string message = "привет";
+                int numRows = 6;
+                int numColumns = 7;
+                int numCharsPerRow = (int)Math.Ceiling((double)message.Length / numRows);
+
+                // Дополним сообщение пробелами до кратности количеству символов в строке
+                message = message.PadRight(numCharsPerRow * numRows);
+
+                // Создадим двумерный массив для хранения символов сообщения
+                char[,] messageArray = new char[numRows, numCharsPerRow];
+
+                // Заполним массив символами сообщения
+                for (int i = 0; i < numRows; i++)
+                {
+                    for (int j = 0; j < numCharsPerRow; j++)
+                    {
+                        messageArray[i, j] = message[i * numCharsPerRow + j];
+                    }
+                }
+
+                // Создадим массив для хранения зашифрованных символов
+                char[] encryptedChars = new char[numRows * numCharsPerRow];
+                Console.WriteLine(encryptedChars.Length);
+
+                // Заполним массив зашифрованными символами
+                for (int i = 0; i < numRows; i++)
+                {
+                    for (int j = 0; j < numCharsPerRow; j++)
+                    {
+                        for (int k = 0; k < numCharsPerRow; k++)
+                        {
+                            int index = i * numCharsPerRow + k;
+                            if (index < message.Length)
+                            {
+                                encryptedChars[i * numCharsPerRow * numCharsPerRow + (j * numCharsPerRow) + k] = messageArray[i, (j * numCharsPerRow + k) % numCharsPerRow];
+                            }
+                        }
+                    }
+                }
+
+                // Преобразуем зашифрованные символы в строку
+                string encryptedMessage = new string(encryptedChars);
+
+                OutResult.Text += ("Исходное сообщение: " + message);
+                OutResult.Text += (" \n ");
+                OutResult.Text += ("\nЗашифрованное сообщение: " + encryptedMessage);
+
             }
         }
 
