@@ -42,7 +42,6 @@
             this.StripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
             this.StringKeyMenu = new System.Windows.Forms.Label();
-            this.ColumnKeyMenu = new System.Windows.Forms.Label();
             this.TrytoEncryptLabel = new System.Windows.Forms.Label();
             this.ToolMenuAll.SuspendLayout();
             this.SuspendLayout();
@@ -149,20 +148,9 @@
             this.StringKeyMenu.ForeColor = System.Drawing.Color.White;
             this.StringKeyMenu.Location = new System.Drawing.Point(9, 29);
             this.StringKeyMenu.Name = "StringKeyMenu";
-            this.StringKeyMenu.Size = new System.Drawing.Size(54, 18);
+            this.StringKeyMenu.Size = new System.Drawing.Size(41, 18);
             this.StringKeyMenu.TabIndex = 5;
-            this.StringKeyMenu.Text = "String: ";
-            // 
-            // ColumnKeyMenu
-            // 
-            this.ColumnKeyMenu.AutoSize = true;
-            this.ColumnKeyMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ColumnKeyMenu.ForeColor = System.Drawing.Color.White;
-            this.ColumnKeyMenu.Location = new System.Drawing.Point(9, 56);
-            this.ColumnKeyMenu.Name = "ColumnKeyMenu";
-            this.ColumnKeyMenu.Size = new System.Drawing.Size(68, 18);
-            this.ColumnKeyMenu.TabIndex = 5;
-            this.ColumnKeyMenu.Text = "Column: ";
+            this.StringKeyMenu.Text = "Key: ";
             // 
             // TrytoEncryptLabel
             // 
@@ -182,7 +170,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.TrytoEncryptLabel);
-            this.Controls.Add(this.ColumnKeyMenu);
             this.Controls.Add(this.StringKeyMenu);
             this.Controls.Add(this.ToolMenuAll);
             this.Controls.Add(this.OutResult);
@@ -192,6 +179,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encryption";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Encryption_FormClosing);
+            this.Load += new System.EventHandler(this.Encryption_Load);
             this.ToolMenuAll.ResumeLayout(false);
             this.ToolMenuAll.PerformLayout();
             this.ResumeLayout(false);
@@ -212,7 +200,6 @@
         private System.Windows.Forms.Timer ProgressTimer;
         private System.Windows.Forms.ToolStripMenuItem ввестиКлючToolStripMenuItem;
         private System.Windows.Forms.Label StringKeyMenu;
-        private System.Windows.Forms.Label ColumnKeyMenu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label TrytoEncryptLabel;
     }

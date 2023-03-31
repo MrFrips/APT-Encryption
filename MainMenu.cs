@@ -28,6 +28,10 @@ namespace encryption
             //richTextBox1.Text = Properties.Settings.Default.Save_text; // Загружаем ранее сохраненный текст
             Properties.Settings.Default.Save();  // Сохраняем переменные.
         }
+        private void Encryption_Load(object sender, EventArgs e)
+        {
+
+        }
         //bool savedone = false;
         private void ToolMenu_Click(object sender, EventArgs e)
         {
@@ -41,10 +45,8 @@ namespace encryption
                 //Откртытие Диолога↓
                 if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
                     return;
-                //Загрузка Бара
-                //туть ↓
-                //
-
+                ///Загрузка Бара
+                ///Туть
                 // получаем выбранный файл↓
                 string filename = saveFileDialog.FileName;
                 // сохраняем текст в файл↓
@@ -76,31 +78,22 @@ namespace encryption
                 //savedone = false;
                 OutResult.Text = fileText;
             }
-                StripProgressBar.Maximum = 100;
-            if (StripProgressBar.Value != 100)
-            {
-                StripProgressBar.Increment(21);
-            }
-            else
-            {
-                ProgressTimer.Stop();
-                StripProgressBar.Value = 0;
-            }   
         }
 
         private void ввестиКлючToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StringKeyMenu.Text = "String: ";
-            ColumnKeyMenu.Text = "Column: ";
+            StringKeyMenu.Text = "Ключ: ";
+            //ColumnKeyMenu.Text = "Column: ";
+            //ColumnKeyMenu.Text = "";
             Key f = new Key();
             f.ShowDialog();
-            StringKeyMenu.Text += DataReform.StringText;
-            ColumnKeyMenu.Text += DataReform.СolumnText;
+            StringKeyMenu.Text += DataReform.KeyStringText;
+            //ColumnKeyMenu.Text += DataReform.СolumnText;
         }
 
         private void GoEncryption_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(DataReform.StringText) || (string.IsNullOrEmpty(DataReform.СolumnText)))
+            if (string.IsNullOrEmpty(DataReform.KeyStringText)) //|| (string.IsNullOrEmpty(DataReform.СolumnText)))
             {
                 DialogResult result = MessageBox.Show("Прежде чем что то шифровать нужен ключ...\n\nХотите открыть окно с вводом ключа?", "Горе шифровщик...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
@@ -108,8 +101,8 @@ namespace encryption
                     //Открыть форму, если нет то не открывать.
                     Key f = new Key();
                     f.ShowDialog();
-                    StringKeyMenu.Text += DataReform.StringText;
-                    ColumnKeyMenu.Text += DataReform.СolumnText;
+                    StringKeyMenu.Text += DataReform.KeyStringText;
+                    //ColumnKeyMenu.Text += DataReform.СolumnText;
                 }
                 //Простое закрытие Сообщения←
             }
@@ -186,5 +179,7 @@ namespace encryption
             DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 e.Cancel = (result != DialogResult.Yes);
         }
+
+
     }
 }

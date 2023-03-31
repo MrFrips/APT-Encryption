@@ -30,29 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Key));
-            this.StringBox = new System.Windows.Forms.TextBox();
+            this.KeyStringBox = new System.Windows.Forms.TextBox();
             this.TextFormKey = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.InOutPutDataError = new System.Windows.Forms.ErrorProvider(this.components);
             this.CloseThisForm = new System.Windows.Forms.Button();
             this.infoFormKey = new System.Windows.Forms.Label();
-            this.СolumnBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.InOutPutDataError)).BeginInit();
             this.SuspendLayout();
             // 
-            // StringBox
+            // KeyStringBox
             // 
-            this.StringBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StringBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StringBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StringBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.StringBox.Location = new System.Drawing.Point(93, 36);
-            this.StringBox.Name = "StringBox";
-            this.StringBox.Size = new System.Drawing.Size(110, 29);
-            this.StringBox.TabIndex = 0;
-            this.StringBox.TextChanged += new System.EventHandler(this.StringBox_TextChanged);
-            this.StringBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StringBox_KeyPress);
+            this.KeyStringBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.KeyStringBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KeyStringBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.KeyStringBox.ForeColor = System.Drawing.SystemColors.Info;
+            this.KeyStringBox.Location = new System.Drawing.Point(67, 45);
+            this.KeyStringBox.Multiline = true;
+            this.KeyStringBox.Name = "KeyStringBox";
+            this.KeyStringBox.Size = new System.Drawing.Size(143, 61);
+            this.KeyStringBox.TabIndex = 0;
+            this.KeyStringBox.TextChanged += new System.EventHandler(this.StringBox_TextChanged);
+            this.KeyStringBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StringBox_KeyPress);
             // 
             // TextFormKey
             // 
@@ -70,22 +70,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Location = new System.Drawing.Point(8, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Строка";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Столбец";
+            this.label1.Text = "Ключ:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // InOutPutDataError
             // 
@@ -118,18 +108,17 @@
             this.infoFormKey.TabIndex = 4;
             this.infoFormKey.Text = "Какое-то info";
             // 
-            // СolumnBox
+            // label2
             // 
-            this.СolumnBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.СolumnBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.СolumnBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.СolumnBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.СolumnBox.Location = new System.Drawing.Point(93, 71);
-            this.СolumnBox.Name = "СolumnBox";
-            this.СolumnBox.Size = new System.Drawing.Size(110, 29);
-            this.СolumnBox.TabIndex = 0;
-            this.СolumnBox.TextChanged += new System.EventHandler(this.StringBox_TextChanged);
-            this.СolumnBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.СolumnBox_KeyPress);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(8, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(220, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Пример ключа: 3 2 6 4 1 5";
+            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // Key
             // 
@@ -142,13 +131,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TextFormKey);
-            this.Controls.Add(this.СolumnBox);
-            this.Controls.Add(this.StringBox);
+            this.Controls.Add(this.KeyStringBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Key";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Key";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Key_FormClosing);
+            this.Load += new System.EventHandler(this.Key_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Key_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.InOutPutDataError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,13 +147,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox StringBox;
+        private System.Windows.Forms.TextBox KeyStringBox;
         private System.Windows.Forms.Label TextFormKey;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider InOutPutDataError;
         private System.Windows.Forms.Button CloseThisForm;
         private System.Windows.Forms.Label infoFormKey;
-        private System.Windows.Forms.TextBox СolumnBox;
+        private System.Windows.Forms.Label label2;
     }
 }
