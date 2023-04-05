@@ -9,7 +9,6 @@ namespace encryption
 {
     static class DataReform
     {
-        //public static string СolumnText;
         public static string KeyStringText;
     }
     ///Для закрытие формы через кнопку Enter

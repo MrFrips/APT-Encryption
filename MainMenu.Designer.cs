@@ -43,6 +43,7 @@
             this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
             this.StringKeyMenu = new System.Windows.Forms.Label();
             this.TrytoEncryptLabel = new System.Windows.Forms.Label();
+            this.GoDencript = new System.Windows.Forms.Button();
             this.ToolMenuAll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,12 +164,23 @@
             this.TrytoEncryptLabel.TabIndex = 5;
             this.TrytoEncryptLabel.Text = "Попытки зашифровать: ";
             // 
+            // GoDencript
+            // 
+            this.GoDencript.Location = new System.Drawing.Point(685, 297);
+            this.GoDencript.Name = "GoDencript";
+            this.GoDencript.Size = new System.Drawing.Size(103, 23);
+            this.GoDencript.TabIndex = 6;
+            this.GoDencript.Text = "Расшифровать?";
+            this.GoDencript.UseVisualStyleBackColor = true;
+            this.GoDencript.Click += new System.EventHandler(this.GoDencript_Click);
+            // 
             // Encryption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GoDencript);
             this.Controls.Add(this.TrytoEncryptLabel);
             this.Controls.Add(this.StringKeyMenu);
             this.Controls.Add(this.ToolMenuAll);
@@ -202,6 +214,7 @@
         private System.Windows.Forms.Label StringKeyMenu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label TrytoEncryptLabel;
+        private System.Windows.Forms.Button GoDencript;
     }
 }
 

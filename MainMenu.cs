@@ -109,54 +109,93 @@ namespace encryption
             else
             {
                 //Начать шифровку.↓
-                string message = "привет";
-                int numRows = 6;
-                int numColumns = 7;
-                int numCharsPerRow = (int)Math.Ceiling((double)message.Length / numRows);
+                // исходный текст
+                string plaintext = OutResult.Text;
 
-                // Дополним сообщение пробелами до кратности количеству символов в строке
-                message = message.PadRight(numCharsPerRow * numRows);
+                // ключ шифрования
+                int key = Convert.ToInt32(DataReform.KeyStringText);
 
-                // Создадим двумерный массив для хранения символов сообщения
-                char[,] messageArray = new char[numRows, numCharsPerRow];
-
-                // Заполним массив символами сообщения
-                for (int i = 0; i < numRows; i++)
-                {
-                    for (int j = 0; j < numCharsPerRow; j++)
-                    {
-                        messageArray[i, j] = message[i * numCharsPerRow + j];
-                    }
-                }
-
-                // Создадим массив для хранения зашифрованных символов
-                char[] encryptedChars = new char[numRows * numCharsPerRow];
-                Console.WriteLine(encryptedChars.Length);
-
-                // Заполним массив зашифрованными символами
-                for (int i = 0; i < numRows; i++)
-                {
-                    for (int j = 0; j < numCharsPerRow; j++)
-                    {
-                        for (int k = 0; k < numCharsPerRow; k++)
-                        {
-                            int index = i * numCharsPerRow + k;
-                            if (index < message.Length)
-                            {
-                                encryptedChars[i * numCharsPerRow * numCharsPerRow + (j * numCharsPerRow) + k] = messageArray[i, (j * numCharsPerRow + k) % numCharsPerRow];
-                            }
-                        }
-                    }
-                }
-
-                // Преобразуем зашифрованные символы в строку
-                string encryptedMessage = new string(encryptedChars);
-
-                OutResult.Text += ("Исходное сообщение: " + message);
-                OutResult.Text += (" \n ");
-                OutResult.Text += ("\nЗашифрованное сообщение: " + encryptedMessage);
-
+                // шифрование текста
+                string ciphertext = EncryptTransposition(plaintext, key);
+                OutResult.Text = ciphertext;
             }
+        }
+        //РАСШИФРОВКА↓
+        private void GoDencript_Click(object sender, EventArgs e)
+        {
+            string ciphertext = OutResult.Text;
+            int key = Convert.ToInt32(DataReform.KeyStringText);
+
+            string decryptedtext = DecryptTransposition(ciphertext, key);
+            OutResult.Text = decryptedtext;
+        }
+        // Функция для шифровки текста с помощью шифра транспонирования
+        static string EncryptTransposition(string plaintext, int key)
+        {
+            int rows = (int)Math.Ceiling((double)plaintext.Length / key);
+            int columns = key;
+            char[,] matrix = new char[rows, columns];
+            int k = 0;
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (k < plaintext.Length)
+                    {
+                        matrix[i, j] = plaintext[k++];
+                    }
+                    else
+                    {
+                        matrix[i, j] = ' ';
+                    }
+                }
+            }
+
+            StringBuilder ciphertext = new StringBuilder();
+            for (int j = 0; j < columns; j++)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    ciphertext.Append(matrix[i, j]);
+                }
+            }
+
+            return ciphertext.ToString();
+        }
+        // Функция для дешифровки текста, зашифрованного шифром транспонирования
+        static string DecryptTransposition(string ciphertext, int key)
+        {
+            int rows = (int)Math.Ceiling((double)ciphertext.Length / key);
+            int columns = key;
+            char[,] matrix = new char[rows, columns];
+            int k = 0;
+
+            for (int j = 0; j < columns; j++)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    if (k < ciphertext.Length)
+                    {
+                        matrix[i, j] = ciphertext[k++];
+                    }
+                    else
+                    {
+                        matrix[i, j] = ' ';
+                    }
+                }
+            }
+
+            StringBuilder decryptedtext = new StringBuilder();
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    decryptedtext.Append(matrix[i, j]);
+                }
+            }
+
+            return decryptedtext.ToString();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
