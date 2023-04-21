@@ -28,10 +28,6 @@ namespace encryption
             //richTextBox1.Text = Properties.Settings.Default.Save_text; // Загружаем ранее сохраненный текст
             Properties.Settings.Default.Save();  // Сохраняем переменные.
         }
-        private void Encryption_Load(object sender, EventArgs e)
-        {
-
-        }
         //bool savedone = false;
         private void ToolMenu_Click(object sender, EventArgs e)
         {

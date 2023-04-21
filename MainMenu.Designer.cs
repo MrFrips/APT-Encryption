@@ -199,7 +199,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encryption";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Encryption_FormClosing);
-            this.Load += new System.EventHandler(this.Encryption_Load);
             this.ToolMenuAll.ResumeLayout(false);
             this.ToolMenuAll.PerformLayout();
             this.ResumeLayout(false);
