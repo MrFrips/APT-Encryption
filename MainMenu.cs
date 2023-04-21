@@ -106,6 +106,12 @@ namespace encryption
                 }
                 //Простое закрытие Сообщения←
             }
+            else if (string.IsNullOrEmpty(OutResult.Text))
+            {
+                OutResult.BackColor = Color.Red;
+                MessageBox.Show("Без слов шифрование бесполезно...", "Как говорил великий: Синь Зунь Ци", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                
+            }
             else
             {
                 //Начать шифровку.↓
@@ -123,11 +129,19 @@ namespace encryption
         //РАСШИФРОВКА↓
         private void GoDencript_Click(object sender, EventArgs e)
         {
-            string ciphertext = OutResult.Text;
-            int key = Convert.ToInt32(DataReform.KeyStringText);
+            if (String.IsNullOrEmpty(OutResult.Text))
+            {
+                OutResult.BackColor = Color.Red;
+                MessageBox.Show("Без шифрования расшифрование бесполезно...", "Как говорил великий: Синь Зунь Ци II", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string ciphertext = OutResult.Text;
+                int key = Convert.ToInt32(DataReform.KeyStringText);
 
-            string decryptedtext = DecryptTransposition(ciphertext, key);
-            OutResult.Text = decryptedtext;
+                string decryptedtext = DecryptTransposition(ciphertext, key);
+                OutResult.Text = decryptedtext;
+            }
         }
         // Функция для шифровки текста с помощью шифра транспонирования
         static string EncryptTransposition(string plaintext, int key)
@@ -219,6 +233,9 @@ namespace encryption
                 e.Cancel = (result != DialogResult.Yes);
         }
 
-
+        private void OutResult_MouseEnter(object sender, EventArgs e)
+        {
+            OutResult.BackColor= (Color.FromArgb(51, 51, 51));
+        }
     }
 }
