@@ -212,15 +212,15 @@ namespace encryption
         {
             //Попытка в закрытие без предупреждения после сохранения.
             //if (savedone = false) { }
-            DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-            {
-                //Простое закрытие←
-            }
+            //DialogResult result = MessageBox.Show("Акуратрнее возможно вы не сохранили ведённые данные\n\nТочно хотите выйти?", "Горе шифровщик?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (result == DialogResult.Yes)
+            //{
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    //Простое закрытие←
+            //}
         }
         //Подправить предотвращения закрытие формы по кнопке...
         private void Encryption_FormClosing(object sender, FormClosingEventArgs e)
