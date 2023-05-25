@@ -86,7 +86,6 @@ namespace encryption
                 Properties.Settings.Default.Save(); // Сохраняем переменные.
                 this.Close();
             }
-            
         }
 
         private void StringBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,20 +97,13 @@ namespace encryption
             }
         }
 
-        private void СolumnBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char number = e.KeyChar;
-            if (!Char.IsDigit(number) && e.KeyChar != Convert.ToChar(8))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+        //private void СolumnBox_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    char number = e.KeyChar;
+        //    if (!Char.IsDigit(number) && e.KeyChar != Convert.ToChar(8))
+        //    {
+        //        e.Handled = true;
+        //    }
+        //}
     }
 }

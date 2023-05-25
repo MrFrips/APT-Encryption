@@ -75,7 +75,6 @@
             this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ключ:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // InOutPutDataError
             // 
@@ -118,7 +117,6 @@
             this.label2.Size = new System.Drawing.Size(231, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Пример ключа: 3; 2; 6; 4; 5:\r\n";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // Key
             // 
