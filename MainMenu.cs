@@ -31,24 +31,32 @@ namespace encryption
         //bool savedone = false;
         private void ToolMenu_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            DialogResult SaveOrNot = MessageBox.Show("Точно хочешь сохранить пустой файл?", "Воу", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (string.IsNullOrEmpty(OutResult.Text))
+            if  (SaveOrNot == DialogResult.Yes){
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                {
+                    //Фильтра для файла↓
+                    saveFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
+                    saveFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
+                    saveFileDialog.FilterIndex = 2;
+                    saveFileDialog.RestoreDirectory = true;
+                    //Откртытие Диолога↓
+                    if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                        return;
+                    ///Загрузка Бара
+                    ///Туть
+                    // получаем выбранный файл↓
+                    string filename = saveFileDialog.FileName;
+                    // сохраняем текст в файл↓
+                    System.IO.File.WriteAllText(filename, OutResult.Text);
+                    //savedone = true;
+                    MessageBox.Show("Файл сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else 
             {
-                //Фильтра для файла↓
-                saveFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
-                saveFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
-                saveFileDialog.FilterIndex = 2;
-                saveFileDialog.RestoreDirectory = true;
-                //Откртытие Диолога↓
-                if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
-                    return;
-                ///Загрузка Бара
-                ///Туть
-                // получаем выбранный файл↓
-                string filename = saveFileDialog.FileName;
-                // сохраняем текст в файл↓
-                System.IO.File.WriteAllText(filename, OutResult.Text);
-                //savedone = true;
-                MessageBox.Show("Файл сохранен", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                OutResult.BackColor = Color.Red;
             }
         }
 
