@@ -147,9 +147,9 @@ namespace encryption
             char[,] matrix = new char[rows, columns];
             int k = 0;
 
-            for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++) // Изменили порядок циклов
             {
-                for (int j = 0; j < columns; j++)
+                for (int i = 0; i < rows; i++) // Изменили порядок циклов
                 {
                     if (k < plaintext.Length)
                     {
@@ -163,9 +163,9 @@ namespace encryption
             }
 
             StringBuilder ciphertext = new StringBuilder();
-            for (int j = 0; j < columns; j++)
+            for (int i = 0; i < rows; i++) // Изменили порядок циклов
             {
-                for (int i = 0; i < rows; i++)
+                for (int j = 0; j < columns; j++) // Изменили порядок циклов
                 {
                     ciphertext.Append(matrix[i, j]);
                 }
@@ -181,9 +181,9 @@ namespace encryption
             char[,] matrix = new char[rows, columns];
             int k = 0;
 
-            for (int j = 0; j < columns; j++)
+            for (int i = 0; i < rows; i++) // Изменили порядок циклов
             {
-                for (int i = 0; i < rows; i++)
+                for (int j = 0; j < columns; j++) // Изменили порядок циклов
                 {
                     if (k < ciphertext.Length)
                     {
@@ -197,9 +197,9 @@ namespace encryption
             }
 
             StringBuilder decryptedtext = new StringBuilder();
-            for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++) // Изменили порядок циклов
             {
-                for (int j = 0; j < columns; j++)
+                for (int i = 0; i < rows; i++) // Изменили порядок циклов
                 {
                     decryptedtext.Append(matrix[i, j]);
                 }
